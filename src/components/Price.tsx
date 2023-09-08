@@ -15,7 +15,7 @@ const Price = ({ price, id, options }: Props) => {
 
   useEffect(() => {
     setTotal(
-      quantity * (options ? price + options[selected].additionalPrice : price)
+      quantity * (options ? price + options[selected].additionalPrice : price),
     );
   }, [quantity, selected, options, price]);
 
@@ -27,7 +27,7 @@ const Price = ({ price, id, options }: Props) => {
         {options?.map((option, index) => (
           <button
             key={option.title}
-            className="p-2 ring-1 min-w-[6rem] ring-red-400 rounded-md"
+            className="min-w-[6rem] rounded-md p-2 ring-1 ring-red-400"
             style={{
               background: selected === index ? "rgb(248 113 113)" : "white",
               color: selected === index ? "white" : "red",
@@ -39,11 +39,11 @@ const Price = ({ price, id, options }: Props) => {
         ))}
       </div>
       {/* QUANTITY AND ADD BUTTON CONTAINER */}
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         {/* QUANTITY */}
-        <div className="flex justify-between w-full p-3 ring-1 ring-red-500">
+        <div className="flex w-full justify-between p-3 ring-1 ring-red-500">
           <span>Quantity</span>
-          <div className="flex gap-4 items-center">
+          <div className="flex items-center gap-4">
             <button
               onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}
             >
@@ -58,7 +58,7 @@ const Price = ({ price, id, options }: Props) => {
           </div>
         </div>
         {/* CART BUTTON */}
-        <button className="uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-500">
+        <button className="w-56 bg-red-500 p-3 uppercase text-white ring-1 ring-red-500">
           Add to Cart
         </button>
       </div>
