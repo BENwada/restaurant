@@ -6,7 +6,6 @@ import Image from "next/image";
 import UserLinks from "./UserLinks";
 
 const Navbar = () => {
-  const user = false;
   return (
     <div className="flex h-12 items-center justify-between border-b-2 border-b-red-500 p-4 uppercase text-red-500 md:h-24 lg:px-20 xl:px-40">
       {/* LEFT LINKS */}
