@@ -14,7 +14,7 @@ const getData = async () => {
 };
 
 const MenuPage = async () => {
-  const menu: MenuType = await getData();
+  const menu: MenuType[] = await getData();
 
   return (
     <div className="flex h-[calc(100vh-6rem)] flex-col items-center p-4 md:h-[calc(100vh-9rem)] md:flex-row lg:px-20 xl:px-40">
